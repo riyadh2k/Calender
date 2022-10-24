@@ -1,5 +1,6 @@
 package calender;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -48,13 +49,13 @@ public class GUI {
 	private static void addGroupOfComponents(String text, JPanel panel,String day, String date) {
 		// TODO Auto-generated method stub
 		JPanel panelChild = new JPanel();
-//		panelChild.setLayout(new BoxLayout(panelChild, BoxLayout.Y_AXIS));
-		panelChild.setBackground(Color.orange);
-		panelChild.setOpaque(true);
+		panelChild.setLayout(new BoxLayout(panelChild, BoxLayout.Y_AXIS));
+	
 		JLabel labelday= new JLabel(day);
-		labelday.setBackground(Color.RED);
-		labelday.setOpaque(true);
+		
+		labelday.setAlignmentX(Component.CENTER_ALIGNMENT);
 		JLabel labeldate= new JLabel(date);
+		labeldate.setAlignmentX(Component.CENTER_ALIGNMENT);
 		JTextArea eventTextarea = new JTextArea();
 		eventTextarea.setEditable(false);
 		eventTextarea.setLineWrap(true);
@@ -62,6 +63,7 @@ public class GUI {
 		
 		
 		JButton button = new JButton (text+ "");
+		button.setAlignmentX(Component.CENTER_ALIGNMENT);
 //		button.setHorizontalAlignment(JButton.CENTER);
 		JTextField tf = new JTextField (text+ "Text Field",20);
 		tf.setMaximumSize(new Dimension (Short.MAX_VALUE, 500));
