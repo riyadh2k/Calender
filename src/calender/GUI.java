@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.BorderFactory;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -24,31 +23,33 @@ public class GUI {
 		panelChild.setLayout(new BoxLayout(panelChild, BoxLayout.Y_AXIS));
 
 		JLabel labelday = new JLabel(day);
-
 		labelday.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
 		JLabel labeldate = new JLabel(date);
 		labeldate.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
 		JTextArea eventTextarea = new JTextArea();
 		eventTextarea.setEditable(false);
 		eventTextarea.setLineWrap(true);
-//		label.setHorizontalAlignment(JLabel.CENTER);
+//		eventTextarea.setBackground(Color.lightGray);
+
 
 		JButton button = new JButton(text + "");
 		button.setAlignmentX(Component.CENTER_ALIGNMENT);
-//		button.setHorizontalAlignment(JButton.CENTER);
+		
 		JTextField tf = new JTextField(text + "Text Field", 20);
 		tf.setMaximumSize(new Dimension(Short.MAX_VALUE, 500));
 		addButtonListener(button, eventTextarea, tf);
 		panelChild.setBorder((BorderFactory.createLineBorder(Color.black)));
-//		panel.add(labelday);
+
 
 		panelChild.add(labelday);
 		panelChild.add(labeldate);
 		panelChild.add(eventTextarea);
-		Dimension minSize = new Dimension(5, 100);
-		Dimension prefSize = new Dimension(5, 100);
-		Dimension maxSize = new Dimension(Short.MAX_VALUE, Short.MAX_VALUE);
-		panelChild.add(new Box.Filler(minSize, prefSize, maxSize));
+//		Dimension minSize = new Dimension(5, 100);
+//		Dimension prefSize = new Dimension(5, 100);
+//		Dimension maxSize = new Dimension(Short.MAX_VALUE, Short.MAX_VALUE);
+//		panelChild.add(new Box.Filler(minSize, prefSize, maxSize));
 		panelChild.add(tf);
 		panelChild.add(button);
 //		System.out.println(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
@@ -68,15 +69,13 @@ public class GUI {
 //				System.out.println(tf.getText());
 				label.setText(label.getText() + "\n" + tf.getText());
 				tf.setText(" ");
-
 			}
-
 		};
 		button.addActionListener(buttonListener);
 	}
 
 	private static void setDayColor(JLabel labelday, String date) {
-		if (LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")).equals(date)) {
+		if (LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")).equals(date)) {
 			labelday.setOpaque(true);
 			labelday.setBackground(Color.GREEN);
 		}

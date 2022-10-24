@@ -9,8 +9,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-//		GUI.createAndDisplay();
+		
 		JFrame frame = new JFrame("Calender");
 		frame.setSize(1000, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -20,7 +19,7 @@ public class Main {
 		panel.setLayout(new GridLayout(1, 7, 5, 5));
 
 		DayDate dayDate = new DayDate();
-//		String monDate = dayDate.getWeekDate(DayOfWeek.MONDAY);
+
 
 		GUI.addGroupOfComponents("Add", panel, "MONDAY", dayDate.getWeekDate(DayOfWeek.MONDAY));
 		GUI.addGroupOfComponents("Add", panel, "TUESDAY", dayDate.getWeekDate(DayOfWeek.TUESDAY));
