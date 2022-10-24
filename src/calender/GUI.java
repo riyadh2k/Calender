@@ -48,7 +48,7 @@ public class GUI {
 	private static void addGroupOfComponents(String text, JPanel panel,String day, String date) {
 		// TODO Auto-generated method stub
 		JPanel panelChild = new JPanel();
-//		panelChild.setLayout(new BoxLayout(panelChild, BoxLayout.Y_AXIS));
+		panelChild.setLayout(new BoxLayout(panelChild, BoxLayout.Y_AXIS));
 		panelChild.setBackground(Color.orange);
 		panelChild.setOpaque(true);
 		JLabel labelday= new JLabel(day);
@@ -59,7 +59,7 @@ public class GUI {
 		eventTextarea.setEditable(false);
 		eventTextarea.setLineWrap(true);
 //		label.setHorizontalAlignment(JLabel.CENTER);
-		
+		CUSTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 		
 		JButton button = new JButton (text+ "");
 //		button.setHorizontalAlignment(JButton.CENTER);
